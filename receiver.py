@@ -10,7 +10,7 @@ from aes_socket_utils import (
     recv_exact,
 )
 
-HOST = os.getenv("RECEIVER_HOST", "0.0.0.0")
+HOST = os.getenv("RECEIVER_HOST", "26.217.245.162")
 DATA_PORT = int(os.getenv("DATA_PORT", "6000"))
 KEY_PORT = int(os.getenv("KEY_PORT", "6001"))
 TIMEOUT = float(os.getenv("SOCKET_TIMEOUT", "10"))

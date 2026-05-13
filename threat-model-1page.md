@@ -2,36 +2,36 @@
 
 ## Thông tin nhóm
 
-- Thành viên 1: TODO_STUDENT
-- Thành viên 2: TODO_STUDENT
+- Thành viên 1: Đoàn Quốc Bảo - MSSV: 1871020071
+- Thành viên 2: Nguyễn Đăng Quang - MSSV: 1871020481
 
 ## Assets
 
-TODO_STUDENT: Liệt kê tài sản cần bảo vệ, ví dụ plaintext, AES key, IV, ciphertext, file đầu vào, file đầu ra và log.
+- Plaintext (bản tin) cần bảo vệ.
+- AES key và IV (nhạy cảm).
+- Ciphertext truyền qua DATA_PORT.
+- File đầu vào/đầu ra, và file log.
 
 ## Attacker model
 
-TODO_STUDENT: Mô tả đối tượng tấn công có thể nghe lén mạng LAN, bắt gói tin, sửa ciphertext, replay packet hoặc đọc log.
+- Kẻ tấn công có khả năng nghe lén lưu lượng mạng (eavesdrop), chặn/gửi lại gói tin (MITM/replay) và chỉnh sửa ciphertext; cũng có thể truy cập vào file log trên máy nếu bị xâm nhập.
 
 ## Threats
 
-TODO_STUDENT: Nêu ít nhất 3 mối đe dọa cụ thể, ví dụ:
-- Key disclosure do key/IV gửi plaintext.
-- Tampering do ciphertext bị sửa.
-- Replay attack do packet cũ bị gửi lại.
-- Log leakage do key bị ghi vào log.
-- No authentication do Receiver không xác thực Sender.
+- Key disclosure: Key/IV được gửi plaintext trên kênh khóa giả lập -> kẻ nghe lén có thể lấy key.
+- Tampering: Ciphertext có thể bị chỉnh sửa trên kênh dữ liệu dẫn tới giải mã sai hoặc lỗi.
+- Replay attack: Thiếu nonce/sequence cho phép kẻ tấn công replay gói tin cũ.
+- Log leakage: Key/IV hoặc ciphertext có thể bị lộ qua file log nếu ghi nhầm.
+- Lack of authentication: Receiver không xác thực nguồn, dễ bị MITM.
 
 ## Mitigations
 
-TODO_STUDENT: Nêu ít nhất 3 biện pháp giảm thiểu, ví dụ:
-- Không gửi key plaintext trong hệ thống thật.
-- Dùng TLS hoặc cơ chế trao đổi khóa an toàn.
-- Dùng AES-GCM để có xác thực dữ liệu.
-- Không ghi key thật vào log trong môi trường thật.
-- Thêm nonce/timestamp để giảm replay.
-- Thêm xác thực Sender.
+- Không truyền key/IV plaintext trong môi trường thực; dùng TLS để bảo vệ kênh hoặc thực hiện key exchange an toàn (DH, PKI).
+- Sử dụng chế độ có xác thực như AES-GCM hoặc kết hợp AES-CBC với HMAC để đảm bảo tính toàn vẹn và xác thực.
+- Tránh ghi key/IV vào log; chỉ ghi các thông tin không nhạy cảm.
+- Thêm nonce, sequence number hoặc timestamp để chống replay.
+- Thực hiện xác thực hai chiều (mutual authentication) nếu cần.
 
 ## Residual risks
 
-TODO_STUDENT: Nêu ít nhất 1 rủi ro còn lại, ví dụ hệ thống vẫn chưa an toàn vì key channel chỉ là mô phỏng, chưa có TLS, chưa có xác thực và chưa chống replay đầy đủ.
+- Hệ thống demo vẫn còn rủi ro trong môi trường thực: key/IV truyền plaintext (mô phỏng), thiếu xác thực và các cơ chế chống replay hoàn chỉnh.

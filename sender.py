@@ -4,7 +4,7 @@ from pathlib import Path
 
 from aes_socket_utils import build_data_packet, build_key_packet, encrypt_aes_cbc
 
-SERVER_IP = os.getenv("SERVER_IP", "127.0.0.1")
+SERVER_IP = os.getenv("SERVER_IP", "26.215.183.21")
 DATA_PORT = int(os.getenv("DATA_PORT", "6000"))
 KEY_PORT = int(os.getenv("KEY_PORT", "6001"))
 AES_KEY_SIZE = int(os.getenv("AES_KEY_SIZE", "16"))

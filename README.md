@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/UoUP3fAm)
 # FIT4012 - Lab 6 - Hệ thống gửi và nhận dữ liệu mã hóa AES-CBC qua Socket
 
 Repo starter kit này dùng cho **Lab 6**: gửi và nhận dữ liệu mã hóa bằng **AES-CBC** qua **TCP socket**.
@@ -15,20 +16,20 @@ Lab này kế thừa ý tưởng từ Lab 3 DES Socket, nhưng nâng cấp theo 
 
 ## Team members
 
-- **Thành viên 1**: TODO_MEMBER_1 - MSSV: TODO_MEMBER_1_ID
-- **Thành viên 2**: TODO_MEMBER_2 - MSSV: TODO_MEMBER_2_ID
+- **Thành viên 1**: Đoàn Quốc Bảo - MSSV: 1871020071
+- **Thành viên 2**: Nguyễn Đăng Quang - MSSV: 1871020481
 
 ## Task division
 
-- **Thành viên 1 phụ trách chính**: TODO_ROLE_MEMBER_1
-- **Thành viên 2 phụ trách chính**: TODO_ROLE_MEMBER_2
-- **Phần làm chung**: TODO_SHARED_WORK
+- **Thành viên 1 phụ trách chính**: Triển khai Sender, mã hóa, viết tests liên quan đến sender và logging.
+- **Thành viên 2 phụ trách chính**: Triển khai Receiver, giải mã, viết tests liên quan đến receiver và output handling.
+- **Phần làm chung**: Thiết kế protocol, viết unit tests, chạy integration test, hoàn thiện report và threat model.
 
 ## Demo roles
 
-- **Demo Sender / kênh khóa / log gửi**: TODO_DEMO_ROLE_1
-- **Demo Receiver / kênh dữ liệu / giải mã**: TODO_DEMO_ROLE_2
-- **Cả hai cùng trả lời threat model và ethics**: TODO_DEMO_ROLE_SHARED
+- **Demo Sender / kênh khóa / log gửi**: Đoàn Quốc Bảo (Sender, tạo log gửi)
+- **Demo Receiver / kênh dữ liệu / giải mã**: Nguyễn Đăng Quang (Receiver, giải mã và lưu output)
+- **Cả hai cùng trả lời threat model và ethics**: Cả hai cùng thực hiện
 
 ---
 
