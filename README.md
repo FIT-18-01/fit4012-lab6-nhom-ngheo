@@ -29,7 +29,7 @@ Lab này kế thừa ý tưởng từ Lab 3 DES Socket, nhưng nâng cấp theo 
 
 - **Demo Sender / kênh khóa / log gửi**: Đoàn Quốc Bảo (Sender, tạo log gửi)
 - **Demo Receiver / kênh dữ liệu / giải mã**: Nguyễn Đăng Quang (Receiver, giải mã và lưu output)
-- **Cả hai cùng trả lời threat model và ethics**: Cả hai cùng thực hiện
+- **Cả hai cùng trả lời threat model và ethics**: Cả hai cùng thực hiện.
 
 ---
 
