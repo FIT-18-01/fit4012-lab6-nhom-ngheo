@@ -38,7 +38,13 @@ def main() -> None:
     key_packet = build_key_packet(key, iv)
     data_packet = build_data_packet(ciphertext)
 
+    # Gửi qua kênh khóa
     send_packet(SERVER_IP, KEY_PORT, key_packet)
+    
+    # 2. Nghỉ 0.2 giây chờ Receiver kịp mở cổng cho kênh dữ liệu
+    time.sleep(0.2) 
+    
+    # Gửi qua kênh dữ liệu
     send_packet(SERVER_IP, DATA_PORT, data_packet)
 
     lines = [
